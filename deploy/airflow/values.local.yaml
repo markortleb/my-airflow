@@ -1,0 +1,6 @@
+ingress:
+  web:
+    enabled: false
+
+apiServer:
+  enabled: false

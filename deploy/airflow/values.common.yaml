@@ -1,0 +1,13 @@
+executor: LocalExecutor
+
+postgresql:
+  enabled: false
+
+redis:
+  enabled: false
+
+flower:
+  enabled: false
+
+pgbouncer:
+  enabled: false

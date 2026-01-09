@@ -1,0 +1,14 @@
+ingress:
+  web:
+    enabled: true
+    ingressClassName: "traefik"
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    hosts:
+      - name: "airflow.markortleb.com"
+        tls:
+          enabled: true
+          secretName: "airflow-web-tls"
+
+apiServer:
+  enabled: false
