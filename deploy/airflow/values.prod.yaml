@@ -1,5 +1,5 @@
 ingress:
-  web:
+  apiServer:
     enabled: true
     ingressClassName: "traefik"
     annotations:
@@ -9,6 +9,3 @@ ingress:
         tls:
           enabled: true
           secretName: "airflow-web-tls"
-
-apiServer:
-  enabled: false

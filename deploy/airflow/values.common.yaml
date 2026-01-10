@@ -1,7 +1,26 @@
 executor: LocalExecutor
 
+migrationsWaitTimeout: 600
+
+apiServer:
+  args:
+    - bash
+    - -c
+    - exec airflow api-server --host 0.0.0.0 --port 8080 --workers 1
+  startupProbe:
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 18
+
 postgresql:
-  enabled: false
+  enabled: true
+  image:
+    tag: "latest"
+
+migrateDatabaseJob:
+  useHelmHooks: false
+  ttlSecondsAfterFinished: 3600
 
 redis:
   enabled: false
